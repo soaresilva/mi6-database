@@ -17,4 +17,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+// every route in the api.php already has the prefix /api/ (defined in app/Providers/RouteServiceProvider.php)
+// note the backslash in Api\PersonController (it's inside a folder.)
 Route::get('/person', 'Api\PersonController@index');
