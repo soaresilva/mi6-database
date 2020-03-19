@@ -1,1 +1,30 @@
-//
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin: 1rem;
+    max-width: 800px;
+    margin: 1rem;
+}
+
+.people-list {
+    li {
+        display: flex;
+        align-items: flex-start;
+        padding: 0.5rem 0;
+    }
+    .name {
+        margin-top: 0.5rem;
+    }
+
+    .image {
+        // width: 5rem;
+        order: -1;
+        margin-right: 1rem;
+    }
+
+    form {
+        margin-left: auto;
+    }
+}

@@ -4,8 +4,67 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "323e69f3e5566b2a2d91c1406f224daf",
+    "content-hash": "0933ac16e1f6535f66f4619b5ebd60a5",
     "packages": [
+        {
+            "name": "bkwld/croppa",
+            "version": "4.8.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/BKWLD/croppa.git",
+                "reference": "b9715b1932b324e315212f51557c0a7a6b42cf85"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/BKWLD/croppa/zipball/b9715b1932b324e315212f51557c0a7a6b42cf85",
+                "reference": "b9715b1932b324e315212f51557c0a7a6b42cf85",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "4 - 6",
+                "illuminate/routing": "4 - 6",
+                "illuminate/support": "4 - 6",
+                "league/flysystem": "~1.0",
+                "php": ">=5.5.0",
+                "symfony/http-foundation": "2 - 4",
+                "symfony/http-kernel": "2 - 4",
+                "weotch/phpthumb": "^1.0.5"
+            },
+            "conflict": {
+                "league/flysystem-cached-adapter": "<1.0.2"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9",
+                "phpunit/phpunit": "4 - 5"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Bkwld\\Croppa\\ServiceProvider"
+                    ],
+                    "aliases": {
+                        "Croppa": "Bkwld\\Croppa\\Facade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Bkwld\\Croppa": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Robert Reinhard"
+                }
+            ],
+            "description": "Image thumbnail creation through specially formatted URLs for Laravel",
+            "time": "2020-03-14T18:57:08+00:00"
+        },
         {
             "name": "dnoegel/php-xdg-base-dir",
             "version": "v0.1.1",
@@ -3231,6 +3290,41 @@
                 }
             ],
             "time": "2020-03-12T13:44:00+00:00"
+        },
+        {
+            "name": "weotch/phpthumb",
+            "version": "1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/weotch/PHPThumb.git",
+                "reference": "f5c1d2ef2e9de3bded7483778618bf8cac2511c3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/weotch/PHPThumb/zipball/f5c1d2ef2e9de3bded7483778618bf8cac2511c3",
+                "reference": "f5c1d2ef2e9de3bded7483778618bf8cac2511c3",
+                "shasum": ""
+            },
+            "replace": {
+                "dannytrue/phpthumb": "dev-master#2d8898f62e75a743e248dd5906a038d574e0dfe0"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Robert Reinhard"
+                }
+            ],
+            "description": "Fork of PHPThumb that adds auto-image rotation based on EXIF data and composer support",
+            "time": "2015-05-12T22:56:19+00:00"
         }
     ],
     "packages-dev": [
