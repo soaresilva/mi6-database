@@ -22,5 +22,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // note the backslash in Api\PersonController (it's inside a folder.)
 Route::get('/person', 'Api\PersonController@index');
 Route::get('/statuses', 'Api\StatusController@index');
+Route::get('/missions', 'Api\MissionController@index');
 
 Route::post('/person/status/change', 'Api\PersonController@changeStatus');
+
+Route::post('/person/mission/change', 'Api\MissionController@changeMission');

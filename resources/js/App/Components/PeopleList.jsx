@@ -1,5 +1,6 @@
 import React from "react";
 import PersonStatusForm from "./PersonStatusForm";
+import PersonMissions from "./PersonMissions";
 
 export default class PeopleList extends React.Component {
     constructor(props) {
@@ -7,7 +8,8 @@ export default class PeopleList extends React.Component {
 
         this.state = {
             data: null,
-            statuses: null
+            statuses: null,
+            missions: null
         };
     }
     componentDidMount() {
@@ -26,6 +28,14 @@ export default class PeopleList extends React.Component {
                     statuses: data
                 });
             });
+
+        fetch("/api/missions")
+            .then(response => response.json())
+            .then(data => {
+                this.setState({
+                    missions: data
+                });
+            });
     }
 
     render() {
@@ -36,9 +46,19 @@ export default class PeopleList extends React.Component {
                 <ul>
                     {this.state.data.map(person => (
                         <li key={person.id}>
-                            <div className="name"> {person.name} </div>
+                            <div className="name">{person.name}</div>
                             <img className="image" src={person.image_url} />
-                            {/* this below is just a ternary operation spread amongst various lines for easier reading */}
+
+                            {this.state.missions === null ? (
+                                "No missions"
+                            ) : (
+                                <PersonMissions
+                                    id={person.id}
+                                    listOfMissions={this.state.missions}
+                                    missions={person.missions}
+                                />
+                            )}
+
                             {this.state.statuses === null ? (
                                 ""
                             ) : (

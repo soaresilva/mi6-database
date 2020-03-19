@@ -10,4 +10,9 @@ class Mission extends Model
     {
         return $this->belongsTo('App\Image');
     }
+
+    public function people()
+    {
+        return $this->belongsToMany('App\Person');
+    }
 }

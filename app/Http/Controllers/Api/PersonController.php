@@ -11,7 +11,7 @@ class PersonController extends Controller
 {
     public function index()
     {
-        $people = Person::with('image')
+        $people = Person::with('image')->with('missions')
             ->orderBy('name', 'asc')
             ->limit(20)
             ->get();
@@ -26,7 +26,7 @@ class PersonController extends Controller
     public function changeStatus(Request $request)
     {
         $p = Person::findOrFail($request->input('person_id'));
-        // this 'status' below comes from the handlerSubmit thing:" status: this.state.status"
+        // this 'status' below comes from the handleSubmit thing:" status: this.state.status"
         $p->status_id = $request->input('status');
         $p->save();
     }
