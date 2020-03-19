@@ -15,4 +15,4 @@ yarn-error.log
 /public/mix-manifest.json
 /public/uploads
 /public/images
-/storage/images/*
+/storage/images/people
